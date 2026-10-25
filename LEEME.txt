@@ -1,0 +1,30 @@
+CLASIFICACION POR EQUIPOS - VERSION CON SETS
+
+USO:
+1. Extrae todos los archivos en una misma carpeta.
+2. Abre index.html en Chrome, Edge o Firefox.
+3. En cada partido individual o dobles, carga únicamente los sets ganados por cada lado.
+   Ejemplos válidos: 3-0, 3-1, 3-2, 0-3, 1-3, 2-3.
+4. Completa los cinco partidos y guarda la serie.
+5. La tabla se actualiza automáticamente.
+6. Para corregir un resultado, elimina la serie y vuelve a cargarla.
+
+SERIES INICIALES YA CARGADAS:
+Ateneo de Versailles B vs Nikkei TDM A:
+Single 1 3-1; Single 2 1-3; Single 3 3-0; Single 4 3-0; Dobles 3-2.
+Resultado de serie: Ateneo gana 4-1. Sets totales: Ateneo 13, Nikkei 6.
+
+Tomodachi B vs Estacion Ping Pong:
+Single 1 1-3; Single 2 1-3; Single 3 3-1; Single 4 3-0; Dobles 3-2.
+Resultado de serie: Tomodachi gana 3-2. Sets totales: Tomodachi 11, Estacion 9.
+
+REGLAS:
+- Serie ganada = 2 puntos; serie perdida = 1 punto.
+- 5 partidos por serie: 4 singles y 1 dobles.
+- Cada partido es al mejor de 5 sets; el ganador debe alcanzar 3 sets.
+- La tabla ordena por puntos de serie, diferencia de partidos, diferencia de sets, partidos ganados y luego nombre.
+- WO: el equipo que se presenta gana 5-0 administrativo. En WO no se conocen sets reales, por lo que no se suman sets a la diferencia de sets.
+- WO cuenta como una serie ganada por WO en la columna WO.
+
+ALMACENAMIENTO:
+Los datos se guardan en localStorage del navegador actual. No se sincronizan entre dispositivos en esta versión.

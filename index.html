@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificación por equipos · Tenis de mesa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1>Clasificación por equipos</h1>
+        <p class="subtitle">Tenis de mesa · 4 singles + 1 dobles · Mejor de 5 sets</p>
+      </div>
+      <button id="resetAll" class="danger secondary">Reiniciar torneo</button>
+    </header>
+
+    <section class="card">
+      <h2>Clasificación</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pos</th><th class="team-col">Equipo</th><th>Puntos</th><th>G</th><th>P</th><th>WO</th><th>J</th><th>PG</th><th>PP</th><th>D</th><th>Sets +/−</th></tr></thead>
+          <tbody id="standings"></tbody>
+        </table>
+      </div>
+      <p class="hint">Desempate automático: puntos de serie → diferencia de partidos → diferencia de sets → partidos ganados.</p>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <h2>Cargar nueva serie</h2>
+        <form id="matchForm">
+          <label for="teamA">Equipo A</label><select id="teamA" required></select>
+          <label for="teamB">Equipo B</label><select id="teamB" required></select>
+          <div id="games" class="games"></div>
+          <label class="checkbox"><input type="checkbox" id="wo"> Registrar WO (el equipo ausente pierde 0-5)</label>
+          <div id="woOptions" class="hidden">
+            <label for="woLoser">Equipo que no se presentó</label><select id="woLoser"></select>
+          </div>
+          <div id="preview" class="preview"></div>
+          <button type="submit">Guardar serie</button>
+          <p id="formMessage" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Equipos</h2>
+        <form id="teamForm" class="inline-form">
+          <input id="newTeam" type="text" placeholder="Nombre del equipo" maxlength="70" required>
+          <button type="submit">Agregar</button>
+        </form>
+        <ul id="teamList" class="team-list"></ul>
+        <p class="hint">Para quitar un equipo, primero eliminá los resultados en los que participa.</p>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Series ya cargadas</h2>
+      <div id="matchList" class="match-list"></div>
+      <p id="emptyMatches" class="hint">Todavía no hay resultados.</p>
+    </section>
+    <footer>Se guarda automáticamente en este navegador y computadora. Esta versión todavía no sincroniza datos entre dispositivos.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
